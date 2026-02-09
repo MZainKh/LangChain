@@ -1,0 +1,567 @@
+{
+  "schema_version": "1.0.0",
+  "units": {
+    "mass": "g",
+    "volume": "ml",
+    "temperature": "C",
+    "time": "s"
+  },
+  "global_defaults": {
+    "water": {
+      "temperature_c_range": [92, 96],
+      "target_tds_ppm_range": [50, 150]
+    },
+    "grind_size_reference": "1-10 (1=espresso fine, 10=very coarse cold brew)",
+    "brew_efficiency_notes": "Treat ratios as starting points; adjust grind, agitation, and temperature to hit desired strength/extraction."
+  },
+  "recipes": [
+    {
+      "id": "v60_single_cup",
+      "name": "Hario V60 (Single Cup)",
+      "aliases": ["v60", "v60 pour over"],
+      "method_type": "pour_over",
+      "difficulty": 3,
+      "yield": {
+        "beverage_ml": 250,
+        "concentrate": false
+      },
+      "targets": {
+        "ratio_coffee_g_per_water_ml": 0.06,
+        "coffee_g": 15,
+        "water_ml": 250,
+        "brew_time_s_range": [150, 210]
+      },
+      "grind": {
+        "level_1_to_10": 5,
+        "descriptor": "medium-fine"
+      },
+      "water": {
+        "temperature_c": 94
+      },
+      "equipment": [
+        "Hario V60 dripper",
+        "V60 paper filter",
+        "gooseneck kettle",
+        "scale",
+        "timer"
+      ],
+      "phases": [
+        {
+          "phase": "prep",
+          "actions": [
+            {
+              "action": "rinse_filter",
+              "notes": "Rinse filter with hot water; discard rinse water; preheat vessel."
+            }
+          ]
+        },
+        {
+          "phase": "dose",
+          "actions": [
+            {
+              "action": "add_coffee",
+              "parameters": { "coffee_g": 15 },
+              "notes": "Level the bed; create small divot if desired."
+            }
+          ]
+        },
+        {
+          "phase": "bloom",
+          "actions": [
+            {
+              "action": "pour",
+              "parameters": { "water_ml": 45, "pour_time_s": 10 },
+              "notes": "Saturate all grounds evenly."
+            },
+            {
+              "action": "wait",
+              "parameters": { "time_s": 35 }
+            }
+          ],
+          "metrics": {
+            "expected_scale_reading_ml": 45
+          }
+        },
+        {
+          "phase": "main_pours",
+          "actions": [
+            {
+              "action": "pulse_pours",
+              "parameters": {
+                "pulses": 3,
+                "each_pulse_ml": 68,
+                "pour_time_s_each": 12,
+                "pause_s_between": 15
+              },
+              "notes": "Maintain slurry level; pour in slow spirals; avoid heavy edge-channeling."
+            }
+          ],
+          "metrics": {
+            "expected_total_water_ml": 249
+          }
+        },
+        {
+          "phase": "drawdown",
+          "actions": [
+            {
+              "action": "wait_until_drawdown_complete",
+              "parameters": { "max_time_s": 210 },
+              "notes": "Target bed should look flat; no large side-wall bypass."
+            }
+          ]
+        }
+      ],
+      "sensory_tags": ["clean", "bright", "transparent", "high_aroma"],
+      "tuning_guide": {
+        "too_sour_underextracted": [
+          "grind finer by 0.5-1 level",
+          "increase water temperature +1-2C",
+          "extend brew time by slowing pours"
+        ],
+        "too_bitter_overextracted": [
+          "grind coarser by 0.5-1 level",
+          "lower water temperature -1-2C",
+          "reduce agitation; avoid aggressive swirling"
+        ],
+        "too_weak": ["increase coffee dose (e.g., 16g) or reduce water to 230ml"],
+        "too_strong": ["reduce dose or increase water slightly"]
+      }
+    },
+    {
+      "id": "chemex_3cup",
+      "name": "Chemex (3-Cup)",
+      "aliases": ["chemex"],
+      "method_type": "pour_over",
+      "difficulty": 3,
+      "yield": {
+        "beverage_ml": 450,
+        "concentrate": false
+      },
+      "targets": {
+        "ratio_coffee_g_per_water_ml": 0.062,
+        "coffee_g": 28,
+        "water_ml": 450,
+        "brew_time_s_range": [240, 330]
+      },
+      "grind": {
+        "level_1_to_10": 7,
+        "descriptor": "medium-coarse"
+      },
+      "water": {
+        "temperature_c": 94
+      },
+      "equipment": [
+        "Chemex brewer",
+        "Chemex bonded filter",
+        "gooseneck kettle",
+        "scale",
+        "timer"
+      ],
+      "phases": [
+        {
+          "phase": "prep",
+          "actions": [
+            {
+              "action": "rinse_filter",
+              "notes": "Rinse thick filter thoroughly to remove paper taste; preheat."
+            }
+          ]
+        },
+        {
+          "phase": "bloom",
+          "actions": [
+            {
+              "action": "pour",
+              "parameters": { "water_ml": 80, "pour_time_s": 15 }
+            },
+            { "action": "wait", "parameters": { "time_s": 45 } }
+          ]
+        },
+        {
+          "phase": "main_pours",
+          "actions": [
+            {
+              "action": "continuous_pour",
+              "parameters": { "water_ml": 370, "pour_time_s": 120 },
+              "notes": "Keep a steady stream; avoid pouring directly onto filter walls."
+            }
+          ]
+        },
+        {
+          "phase": "drawdown",
+          "actions": [
+            {
+              "action": "wait_until_drawdown_complete",
+              "parameters": { "max_time_s": 330 }
+            }
+          ]
+        }
+      ],
+      "sensory_tags": ["very_clean", "tea_like", "low_oils", "soft_body"],
+      "tuning_guide": {
+        "stalling_slow_drawdown": [
+          "grind coarser",
+          "reduce fines (sift / adjust grinder)",
+          "pour more centrally; avoid wall bypass"
+        ],
+        "hollow": ["grind slightly finer", "increase dose by 1-2g"]
+      }
+    },
+    {
+      "id": "kalita_wave_185",
+      "name": "Kalita Wave 185",
+      "aliases": ["kalita wave"],
+      "method_type": "pour_over",
+      "difficulty": 2,
+      "yield": {
+        "beverage_ml": 300,
+        "concentrate": false
+      },
+      "targets": {
+        "ratio_coffee_g_per_water_ml": 0.06,
+        "coffee_g": 18,
+        "water_ml": 300,
+        "brew_time_s_range": [165, 225]
+      },
+      "grind": {
+        "level_1_to_10": 6,
+        "descriptor": "medium"
+      },
+      "water": {
+        "temperature_c": 93
+      },
+      "equipment": [
+        "Kalita Wave 185 dripper",
+        "Wave filter",
+        "gooseneck kettle",
+        "scale",
+        "timer"
+      ],
+      "phases": [
+        {
+          "phase": "prep",
+          "actions": [{ "action": "rinse_filter" }]
+        },
+        {
+          "phase": "bloom",
+          "actions": [
+            { "action": "pour", "parameters": { "water_ml": 55, "pour_time_s": 10 } },
+            { "action": "wait", "parameters": { "time_s": 30 } }
+          ]
+        },
+        {
+          "phase": "main_pours",
+          "actions": [
+            {
+              "action": "pulse_pours",
+              "parameters": {
+                "pulses": 2,
+                "each_pulse_ml": 122,
+                "pour_time_s_each": 20,
+                "pause_s_between": 20
+              }
+            }
+          ]
+        },
+        {
+          "phase": "drawdown",
+          "actions": [{ "action": "wait_until_drawdown_complete", "parameters": { "max_time_s": 225 } }]
+        }
+      ],
+      "sensory_tags": ["balanced", "consistent", "sweet"],
+      "tuning_guide": {
+        "too_fast": ["grind finer", "slow pour rate"],
+        "too_slow": ["grind coarser", "reduce agitation"]
+      }
+    },
+    {
+      "id": "french_press_standard",
+      "name": "French Press (Standard)",
+      "aliases": ["press pot", "french press"],
+      "method_type": "immersion",
+      "difficulty": 1,
+      "yield": {
+        "beverage_ml": 350,
+        "concentrate": false
+      },
+      "targets": {
+        "ratio_coffee_g_per_water_ml": 0.067,
+        "coffee_g": 23,
+        "water_ml": 350,
+        "brew_time_s_range": [240, 300]
+      },
+      "grind": {
+        "level_1_to_10": 9,
+        "descriptor": "coarse"
+      },
+      "water": {
+        "temperature_c": 94
+      },
+      "equipment": ["French press", "kettle", "scale", "timer"],
+      "phases": [
+        {
+          "phase": "brew",
+          "actions": [
+            { "action": "add_coffee", "parameters": { "coffee_g": 23 } },
+            { "action": "pour", "parameters": { "water_ml": 350, "pour_time_s": 20 } },
+            { "action": "stir", "parameters": { "stirs": 4 }, "notes": "Break crust gently." },
+            { "action": "wait", "parameters": { "time_s": 240 } }
+          ]
+        },
+        {
+          "phase": "press_and_serve",
+          "actions": [
+            { "action": "press", "parameters": { "press_time_s": 20 }, "notes": "Press slowly; avoid agitation." },
+            { "action": "decant", "notes": "Pour out fully to stop extraction." }
+          ]
+        }
+      ],
+      "sensory_tags": ["full_body", "oily", "rich"],
+      "tuning_guide": {
+        "muddy": ["use coarser grind", "skim foam before pressing", "use paper filter add-on"],
+        "bitter": ["shorten steep to 3:30", "lower temp slightly"]
+      }
+    },
+    {
+      "id": "aeropress_inverted",
+      "name": "AeroPress (Inverted, Concentrate + Dilution)",
+      "aliases": ["aeropress inverted"],
+      "method_type": "immersion_pressure",
+      "difficulty": 2,
+      "yield": {
+        "beverage_ml": 220,
+        "concentrate": true
+      },
+      "targets": {
+        "ratio_coffee_g_per_water_ml": 0.12,
+        "coffee_g": 18,
+        "water_ml": 150,
+        "dilution_water_ml": 70,
+        "brew_time_s_range": [75, 120]
+      },
+      "grind": {
+        "level_1_to_10": 4,
+        "descriptor": "medium-fine"
+      },
+      "water": {
+        "temperature_c": 85
+      },
+      "equipment": ["AeroPress", "filter", "kettle", "scale", "timer", "stirrer"],
+      "phases": [
+        {
+          "phase": "prep",
+          "actions": [
+            { "action": "rinse_filter" },
+            { "action": "assemble_inverted", "notes": "Plunger inserted to seal; chamber upright." }
+          ]
+        },
+        {
+          "phase": "brew",
+          "actions": [
+            { "action": "add_coffee", "parameters": { "coffee_g": 18 } },
+            { "action": "pour", "parameters": { "water_ml": 150, "pour_time_s": 10 } },
+            { "action": "stir", "parameters": { "stirs": 10 } },
+            { "action": "wait", "parameters": { "time_s": 45 } }
+          ]
+        },
+        {
+          "phase": "press",
+          "actions": [
+            { "action": "cap_and_flip", "notes": "Attach cap with rinsed filter; flip onto cup." },
+            { "action": "press", "parameters": { "press_time_s": 25 } }
+          ]
+        },
+        {
+          "phase": "dilute",
+          "actions": [
+            { "action": "add_water", "parameters": { "water_ml": 70 }, "notes": "Dilute to taste." }
+          ]
+        }
+      ],
+      "sensory_tags": ["sweet", "rounded", "low_bitterness"],
+      "tuning_guide": {
+        "too_strong": ["increase dilution", "reduce dose to 16g"],
+        "too_weak": ["reduce dilution", "use hotter water"]
+      }
+    },
+    {
+      "id": "cold_brew_concentrate",
+      "name": "Cold Brew (Concentrate)",
+      "aliases": ["cold brew"],
+      "method_type": "cold_immersion",
+      "difficulty": 1,
+      "yield": {
+        "beverage_ml": 600,
+        "concentrate": true
+      },
+      "targets": {
+        "ratio_coffee_g_per_water_ml": 0.2,
+        "coffee_g": 120,
+        "water_ml": 600,
+        "brew_time_s_range": [43200, 86400]
+      },
+      "grind": {
+        "level_1_to_10": 10,
+        "descriptor": "very coarse"
+      },
+      "water": {
+        "temperature_c": "cold"
+      },
+      "equipment": ["jar or cold brew brewer", "filter (paper/cloth)", "scale", "fridge"],
+      "phases": [
+        {
+          "phase": "steep",
+          "actions": [
+            { "action": "combine", "parameters": { "coffee_g": 120, "water_ml": 600 } },
+            { "action": "stir", "parameters": { "stirs": 15 }, "notes": "Ensure all grounds are wet." },
+            { "action": "wait", "parameters": { "time_s": 64800 }, "notes": "18 hours recommended." }
+          ]
+        },
+        {
+          "phase": "filter",
+          "actions": [
+            { "action": "filter", "notes": "Filter twice if needed for clarity." }
+          ]
+        },
+        {
+          "phase": "serve",
+          "actions": [
+            {
+              "action": "dilute_to_serve",
+              "parameters": { "recommended_dilution_ratio_concentrate_to_water": "1:1 to 1:2" },
+              "notes": "Add milk or water; serve over ice."
+            }
+          ]
+        }
+      ],
+      "sensory_tags": ["low_acid", "chocolatey", "smooth"],
+      "tuning_guide": {
+        "too_bitter": ["shorten steep to 12-14h", "use coarser grind"],
+        "too_weak": ["increase steep time", "increase dose slightly"]
+      }
+    },
+    {
+      "id": "cold_drip_standard",
+      "name": "Cold Drip (Slow Drip Tower)",
+      "aliases": ["cold drip", "slow drip", "kyoto style"],
+      "method_type": "slow_cold_extraction",
+      "difficulty": 4,
+      "yield": {
+        "beverage_ml": 500,
+        "concentrate": false
+      },
+      "targets": {
+        "ratio_coffee_g_per_water_ml": 0.08,
+        "coffee_g": 40,
+        "water_ml": 500,
+        "brew_time_s_range": [14400, 28800]
+      },
+      "grind": {
+        "level_1_to_10": 8,
+        "descriptor": "medium-coarse to coarse"
+      },
+      "water": {
+        "temperature_c": "cold",
+        "ice_in_reservoir": true
+      },
+      "equipment": ["cold drip tower", "filters", "scale", "timer"],
+      "phases": [
+        {
+          "phase": "prep",
+          "actions": [
+            { "action": "add_coffee", "parameters": { "coffee_g": 40 } },
+            { "action": "level_bed", "notes": "Even bed reduces channeling." },
+            { "action": "prewet_bed", "parameters": { "water_ml": 30 }, "notes": "Optional pre-infusion." }
+          ]
+        },
+        {
+          "phase": "drip",
+          "actions": [
+            {
+              "action": "set_drip_rate",
+              "parameters": { "drops_per_second_range": [0.5, 1.2] },
+              "notes": "Adjust valve; stable rate matters more than exact value."
+            },
+            {
+              "action": "wait",
+              "parameters": { "time_s": 21600 },
+              "notes": "Target ~6 hours; adjust drip rate to match."
+            }
+          ]
+        }
+      ],
+      "sensory_tags": ["aromatic", "sweet", "silky", "layered"],
+      "tuning_guide": {
+        "watery": ["slow drip rate", "increase coffee dose to 45g"],
+        "overly_intense": ["speed up slightly", "reduce dose"]
+      }
+    },
+    {
+      "id": "espresso_double",
+      "name": "Espresso (Double Shot)",
+      "aliases": ["espresso", "double espresso"],
+      "method_type": "pressure",
+      "difficulty": 4,
+      "yield": {
+        "beverage_ml": 36,
+        "concentrate": true
+      },
+      "targets": {
+        "brew_ratio_in_to_out": "1:2",
+        "dose_g": 18,
+        "yield_g": 36,
+        "brew_time_s_range": [25, 35]
+      },
+      "grind": {
+        "level_1_to_10": 1,
+        "descriptor": "espresso fine"
+      },
+      "water": {
+        "temperature_c": 93
+      },
+      "equipment": ["espresso machine", "grinder", "tamper", "scale", "timer"],
+      "phases": [
+        {
+          "phase": "prep",
+          "actions": [
+            { "action": "dose", "parameters": { "coffee_g": 18 } },
+            { "action": "distribute", "notes": "Even puck density reduces channeling." },
+            { "action": "tamp", "parameters": { "pressure_level": "firm" } }
+          ]
+        },
+        {
+          "phase": "extract",
+          "actions": [
+            { "action": "start_extraction" },
+            { "action": "stop_at_yield", "parameters": { "yield_g": 36, "target_time_s": 30 } }
+          ]
+        }
+      ],
+      "sensory_tags": ["intense", "syrupy", "high_body"],
+      "tuning_guide": {
+        "fast_shot_sour": ["grind finer", "increase dose slightly", "check puck prep"],
+        "slow_shot_bitter": ["grind coarser", "reduce dose", "stop earlier (lower yield)"]
+      }
+    }
+  ],
+  "validation_rules": {
+    "required_fields_per_recipe": [
+      "id",
+      "name",
+      "method_type",
+      "difficulty",
+      "yield",
+      "targets",
+      "grind",
+      "water",
+      "equipment",
+      "phases"
+    ],
+    "difficulty_scale": "1(easy) - 5(advanced)",
+    "phase_action_contract": {
+      "action": "string",
+      "parameters": "object (optional)",
+      "notes": "string (optional)"
+    }
+  }
+}
