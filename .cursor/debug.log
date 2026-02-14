@@ -1,0 +1,19 @@
+{"location": "basic_mcp.ipynb", "message": "client_cwd_before_connect", "data": {"cwd": "/Users/mzainkh/Documents/Learning/LangChain"}, "timestamp": 1771101897996, "hypothesisId": "A"}
+{"location": "basic_mcp.ipynb", "message": "client_created", "data": {}, "timestamp": 1771101897996, "hypothesisId": "A"}
+{"location": "basic_mcp.ipynb", "message": "client_before_get_tools", "data": {}, "timestamp": 1771101902371, "hypothesisId": "C"}
+{"location": "mcp_server.py", "message": "server_process_started", "data": {"pid": 47370}, "timestamp": 1771101902427, "hypothesisId": "A"}
+{"location": "mcp_server.py", "message": "server_imports_done", "data": {}, "timestamp": 1771101903132, "hypothesisId": "B"}
+{"location": "mcp_server.py", "message": "server_tavily_client_created", "data": {}, "timestamp": 1771101903134, "hypothesisId": "B"}
+{"location": "mcp_server.py", "message": "server_entering_mcp_run", "data": {}, "timestamp": 1771101903134, "hypothesisId": "C"}
+{"location": "mcp_server.py", "message": "server_mcp_run_exited_normally", "data": {}, "timestamp": 1771101903233, "hypothesisId": "C"}
+{"location": "basic_mcp.ipynb", "message": "client_get_tools_success", "data": {"count": 1}, "timestamp": 1771101903329, "hypothesisId": "C"}
+{"location": "mcp_server.py", "message": "server_process_started", "data": {"pid": 47371}, "timestamp": 1771101903354, "hypothesisId": "A"}
+{"location": "mcp_server.py", "message": "server_imports_done", "data": {}, "timestamp": 1771101903846, "hypothesisId": "B"}
+{"location": "mcp_server.py", "message": "server_tavily_client_created", "data": {}, "timestamp": 1771101903847, "hypothesisId": "B"}
+{"location": "mcp_server.py", "message": "server_entering_mcp_run", "data": {}, "timestamp": 1771101903848, "hypothesisId": "C"}
+{"location": "mcp_server.py", "message": "server_mcp_run_exited_normally", "data": {}, "timestamp": 1771101904129, "hypothesisId": "C"}
+{"location": "mcp_server.py", "message": "server_process_started", "data": {"pid": 47372}, "timestamp": 1771101904285, "hypothesisId": "A"}
+{"location": "mcp_server.py", "message": "server_imports_done", "data": {}, "timestamp": 1771101904773, "hypothesisId": "B"}
+{"location": "mcp_server.py", "message": "server_tavily_client_created", "data": {}, "timestamp": 1771101904775, "hypothesisId": "B"}
+{"location": "mcp_server.py", "message": "server_entering_mcp_run", "data": {}, "timestamp": 1771101904776, "hypothesisId": "C"}
+{"location": "mcp_server.py", "message": "server_mcp_run_exited_normally", "data": {}, "timestamp": 1771101904788, "hypothesisId": "C"}
