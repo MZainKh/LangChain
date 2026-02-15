@@ -1,0 +1,80 @@
+{
+    "music_database": [
+      {
+        "genre": "R&B",
+        "songs": [
+          {"id": "rnb_001", "title": "Blinding Lights", "artist": "The Weeknd", "year": 2019},
+          {"id": "rnb_002", "title": "Adorn", "artist": "Miguel", "year": 2012},
+          {"id": "rnb_003", "title": "We Belong Together", "artist": "Mariah Carey", "year": 2005},
+          {"id": "rnb_004", "title": "No Scrubs", "artist": "TLC", "year": 1999},
+          {"id": "rnb_005", "title": "So Sick", "artist": "Ne-Yo", "year": 2006},
+          {"id": "rnb_006", "title": "Location", "artist": "Khalid", "year": 2016},
+          {"id": "rnb_007", "title": "Ordinary People", "artist": "John Legend", "year": 2004},
+          {"id": "rnb_008", "title": "Superpower", "artist": "Beyoncé ft. Frank Ocean", "year": 2013},
+          {"id": "rnb_009", "title": "Best Part", "artist": "Daniel Caesar ft. H.E.R.", "year": 2017},
+          {"id": "rnb_010", "title": "Earned It", "artist": "The Weeknd", "year": 2014}
+        ]
+      },
+      {
+        "genre": "Pop",
+        "songs": [
+          {"id": "pop_001", "title": "Shake It Off", "artist": "Taylor Swift", "year": 2014},
+          {"id": "pop_002", "title": "Bad Guy", "artist": "Billie Eilish", "year": 2019},
+          {"id": "pop_003", "title": "Uptown Funk", "artist": "Mark Ronson ft. Bruno Mars", "year": 2014},
+          {"id": "pop_004", "title": "Firework", "artist": "Katy Perry", "year": 2010},
+          {"id": "pop_005", "title": "Levitating", "artist": "Dua Lipa", "year": 2020},
+          {"id": "pop_006", "title": "As It Was", "artist": "Harry Styles", "year": 2022},
+          {"id": "pop_007", "title": "Sorry", "artist": "Justin Bieber", "year": 2015},
+          {"id": "pop_008", "title": "Poker Face", "artist": "Lady Gaga", "year": 2008},
+          {"id": "pop_009", "title": "Roar", "artist": "Katy Perry", "year": 2013},
+          {"id": "pop_010", "title": "Can't Stop the Feeling!", "artist": "Justin Timberlake", "year": 2016}
+        ]
+      },
+      {
+        "genre": "Rap",
+        "songs": [
+          {"id": "rap_001", "title": "HUMBLE.", "artist": "Kendrick Lamar", "year": 2017},
+          {"id": "rap_002", "title": "SICKO MODE", "artist": "Travis Scott", "year": 2018},
+          {"id": "rap_003", "title": "Lose Yourself", "artist": "Eminem", "year": 2002},
+          {"id": "rap_004", "title": "God's Plan", "artist": "Drake", "year": 2018},
+          {"id": "rap_005", "title": "Empire State of Mind", "artist": "Jay-Z ft. Alicia Keys", "year": 2009},
+          {"id": "rap_006", "title": "Alright", "artist": "Kendrick Lamar", "year": 2015},
+          {"id": "rap_007", "title": "Hotline Bling", "artist": "Drake", "year": 2015},
+          {"id": "rap_008", "title": "Stronger", "artist": "Kanye West", "year": 2007},
+          {"id": "rap_009", "title": "Mask Off", "artist": "Future", "year": 2017},
+          {"id": "rap_010", "title": "Industry Baby", "artist": "Lil Nas X & Jack Harlow", "year": 2021}
+        ]
+      },
+      {
+        "genre": "Rock",
+        "songs": [
+          {"id": "rock_001", "title": "Bohemian Rhapsody", "artist": "Queen", "year": 1975},
+          {"id": "rock_002", "title": "Smells Like Teen Spirit", "artist": "Nirvana", "year": 1991},
+          {"id": "rock_003", "title": "Hotel California", "artist": "Eagles", "year": 1976},
+          {"id": "rock_004", "title": "Sweet Child O' Mine", "artist": "Guns N' Roses", "year": 1987},
+          {"id": "rock_005", "title": "Back In Black", "artist": "AC/DC", "year": 1980},
+          {"id": "rock_006", "title": "Stairway to Heaven", "artist": "Led Zeppelin", "year": 1971},
+          {"id": "rock_007", "title": "Wonderwall", "artist": "Oasis", "year": 1995},
+          {"id": "rock_008", "title": "Seven Nation Army", "artist": "The White Stripes", "year": 2003},
+          {"id": "rock_009", "title": "Mr. Brightside", "artist": "The Killers", "year": 2003},
+          {"id": "rock_010", "title": "Highway to Hell", "artist": "AC/DC", "year": 1979}
+        ]
+      },
+      {
+        "genre": "Electronic",
+        "songs": [
+          {"id": "elec_001", "title": "Titanium", "artist": "David Guetta ft. Sia", "year": 2011},
+          {"id": "elec_002", "title": "Animals", "artist": "Martin Garrix", "year": 2013},
+          {"id": "elec_003", "title": "Lean On", "artist": "Major Lazer & DJ Snake", "year": 2015},
+          {"id": "elec_004", "title": "Wake Me Up", "artist": "Avicii", "year": 2013},
+          {"id": "elec_005", "title": "Strobe", "artist": "deadmau5", "year": 2009},
+          {"id": "elec_006", "title": "Levels", "artist": "Avicii", "year": 2011},
+          {"id": "elec_007", "title": "Don't You Worry Child", "artist": "Swedish House Mafia", "year": 2012},
+          {"id": "elec_008", "title": "Clarity", "artist": "Zedd ft. Foxes", "year": 2012},
+          {"id": "elec_009", "title": "Sun & Moon", "artist": "Above & Beyond", "year": 2011},
+          {"id": "elec_010", "title": "Scary Monsters and Nice Sprites", "artist": "Skrillex", "year": 2010}
+        ]
+      }
+    ]
+  }
+  
