@@ -1,0 +1,249 @@
+{
+    "user": {
+      "email": "zain@example.com",
+      "display_name": "Zain",
+      "account_created": "2023-06-15T10:00:00Z",
+      "timezone": "Asia/Dubai"
+    },
+    "inbox_summary": {
+      "total_messages": 25,
+      "unread_messages": 6,
+      "folders": ["inbox", "sent", "drafts", "spam", "archived"]
+    },
+    "folders": {
+      "inbox": [
+        {
+          "id": "msg_001",
+          "from": "recruiter@techcorp.com",
+          "to": "zain@example.com",
+          "subject": "Interview Invitation - Senior Data Engineer",
+          "preview": "We would like to schedule your technical interview next week.",
+          "timestamp": "2026-02-20T09:15:00Z",
+          "is_read": false,
+          "priority": "high",
+          "labels": ["work"]
+        },
+        {
+          "id": "msg_002",
+          "from": "alerts@banksecure.com",
+          "to": "zain@example.com",
+          "subject": "Unusual Login Attempt Detected",
+          "preview": "A login attempt was detected from a new device.",
+          "timestamp": "2026-02-20T07:42:00Z",
+          "is_read": true,
+          "priority": "high",
+          "labels": ["security"]
+        },
+        {
+          "id": "msg_003",
+          "from": "newsletter@aiweekly.io",
+          "to": "zain@example.com",
+          "subject": "Top AI Trends This Week",
+          "preview": "Explore the latest advancements in generative AI.",
+          "timestamp": "2026-02-19T16:40:00Z",
+          "is_read": true,
+          "priority": "low",
+          "labels": ["newsletter"]
+        },
+        {
+          "id": "msg_004",
+          "from": "manager@company.com",
+          "to": "zain@example.com",
+          "subject": "Sprint Planning Notes",
+          "preview": "Please review the attached sprint backlog.",
+          "timestamp": "2026-02-19T13:10:00Z",
+          "is_read": false,
+          "priority": "medium",
+          "labels": ["work"]
+        },
+        {
+          "id": "msg_005",
+          "from": "events@meetup.com",
+          "to": "zain@example.com",
+          "subject": "AI Meetup in Dubai This Weekend",
+          "preview": "Join fellow AI professionals for networking.",
+          "timestamp": "2026-02-18T15:30:00Z",
+          "is_read": false,
+          "priority": "medium",
+          "labels": ["events"]
+        },
+        {
+          "id": "msg_006",
+          "from": "no-reply@github.com",
+          "to": "zain@example.com",
+          "subject": "New Pull Request Assigned",
+          "preview": "You have been requested to review PR #482.",
+          "timestamp": "2026-02-16T19:00:00Z",
+          "is_read": true,
+          "priority": "medium",
+          "labels": ["dev"]
+        },
+        {
+          "id": "msg_007",
+          "from": "friend@gmail.com",
+          "to": "zain@example.com",
+          "subject": "Weekend Plans?",
+          "preview": "Are you free this Friday evening?",
+          "timestamp": "2026-02-16T14:45:00Z",
+          "is_read": true,
+          "priority": "low",
+          "labels": ["personal"]
+        },
+        {
+          "id": "msg_008",
+          "from": "billing@saasplatform.com",
+          "to": "zain@example.com",
+          "subject": "Invoice for February",
+          "preview": "Your invoice for this month is attached.",
+          "timestamp": "2026-02-17T10:20:00Z",
+          "is_read": true,
+          "priority": "medium",
+          "labels": ["finance"]
+        }
+      ],
+      "sent": [
+        {
+          "id": "msg_009",
+          "from": "zain@example.com",
+          "to": "hr@startup.ai",
+          "subject": "Re: Application Follow-up",
+          "timestamp": "2026-02-15T12:00:00Z",
+          "is_read": true
+        },
+        {
+          "id": "msg_010",
+          "from": "zain@example.com",
+          "to": "manager@company.com",
+          "subject": "Re: Sprint Planning Notes",
+          "timestamp": "2026-02-14T17:25:00Z",
+          "is_read": true
+        },
+        {
+          "id": "msg_011",
+          "from": "zain@example.com",
+          "to": "colleague@company.com",
+          "subject": "Spark Job Performance Metrics",
+          "timestamp": "2026-02-14T09:50:00Z",
+          "is_read": true
+        },
+        {
+          "id": "msg_012",
+          "from": "zain@example.com",
+          "to": "friend@gmail.com",
+          "subject": "Re: Weekend Plans",
+          "timestamp": "2026-02-13T18:40:00Z",
+          "is_read": true
+        },
+        {
+          "id": "msg_013",
+          "from": "zain@example.com",
+          "to": "billing@saasplatform.com",
+          "subject": "Payment Confirmation",
+          "timestamp": "2026-02-12T11:15:00Z",
+          "is_read": true
+        }
+      ],
+      "drafts": [
+        {
+          "id": "msg_014",
+          "from": "zain@example.com",
+          "to": "recruiter@bigtech.com",
+          "subject": "Availability for Interview",
+          "timestamp": "2026-02-21T08:30:00Z",
+          "is_read": false
+        },
+        {
+          "id": "msg_015",
+          "from": "zain@example.com",
+          "to": "team@project.com",
+          "subject": "Project Roadmap Outline",
+          "timestamp": "2026-02-21T07:50:00Z",
+          "is_read": false
+        }
+      ],
+      "spam": [
+        {
+          "id": "msg_016",
+          "from": "lottery@winbignow.biz",
+          "to": "zain@example.com",
+          "subject": "You Won $1,000,000!",
+          "timestamp": "2026-02-11T03:12:00Z",
+          "is_read": false
+        },
+        {
+          "id": "msg_017",
+          "from": "crypto@fastprofits.co",
+          "to": "zain@example.com",
+          "subject": "Guaranteed Crypto Returns",
+          "timestamp": "2026-02-10T04:45:00Z",
+          "is_read": false
+        },
+        {
+          "id": "msg_018",
+          "from": "prince@nigeria.ng",
+          "to": "zain@example.com",
+          "subject": "Urgent Business Proposal",
+          "timestamp": "2026-02-09T02:30:00Z",
+          "is_read": false
+        },
+        {
+          "id": "msg_019",
+          "from": "deals@shoppingworld.com",
+          "to": "zain@example.com",
+          "subject": "Flash Sale - 80% Off",
+          "timestamp": "2026-02-08T13:00:00Z",
+          "is_read": true
+        },
+        {
+          "id": "msg_020",
+          "from": "fitness@healthpro.com",
+          "to": "zain@example.com",
+          "subject": "Transform Your Body in 30 Days",
+          "timestamp": "2026-02-07T09:25:00Z",
+          "is_read": true
+        }
+      ],
+      "archived": [
+        {
+          "id": "msg_021",
+          "from": "university@alumni.org",
+          "to": "zain@example.com",
+          "subject": "Alumni Networking Event",
+          "timestamp": "2026-01-30T12:00:00Z",
+          "is_read": true
+        },
+        {
+          "id": "msg_022",
+          "from": "noreply@linkedin.com",
+          "to": "zain@example.com",
+          "subject": "5 New Job Recommendations",
+          "timestamp": "2026-01-28T08:45:00Z",
+          "is_read": true
+        },
+        {
+          "id": "msg_023",
+          "from": "support@streaming.com",
+          "to": "zain@example.com",
+          "subject": "Subscription Renewal Confirmation",
+          "timestamp": "2026-01-25T06:30:00Z",
+          "is_read": true
+        },
+        {
+          "id": "msg_024",
+          "from": "travel@airlines.com",
+          "to": "zain@example.com",
+          "subject": "Flight Itinerary",
+          "timestamp": "2026-01-22T15:10:00Z",
+          "is_read": true
+        },
+        {
+          "id": "msg_025",
+          "from": "service@deliveryapp.com",
+          "to": "zain@example.com",
+          "subject": "Order Delivered",
+          "timestamp": "2026-01-20T20:45:00Z",
+          "is_read": true
+        }
+      ]
+    }
+  }
